@@ -14,11 +14,6 @@
  * limitations under the License.
  * =============================================================================
  */
-
-// import * as tf from '@tensorflow/tfjs';
-// import * as tf from '@tensorflow/tfjs';
-
-// import {IMAGENET_CLASSES} from './imagenet_classes';
 const IMAGENET_CLASSES = {
   0: 'apple',
   1: 'avocado',
@@ -134,6 +129,7 @@ async function getTopKClasses(logits, topK) {
   for (let i = 0; i < topkIndices.length; i++) {
     topClassesAndProbs.push({
       className: IMAGENET_CLASSES[topkIndices[i]],
+      pred: topkIndices[i],
       probability: topkValues[i]
     })
   }
@@ -160,6 +156,11 @@ function showResults(imgElement, classes) {
     const classElement = document.createElement('div');
     classElement.className = 'cell';
     classElement.innerText = classes[i].className;
+    row.appendChild(classElement);
+
+    const predElement = document.createElement('div');
+    classElement.className = 'cell';
+    classElement.innerText = classes[i].pred;
     row.appendChild(classElement);
 
     const probsElement = document.createElement('div');
