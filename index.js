@@ -158,10 +158,10 @@ function showResults(imgElement, classes) {
     classElement.innerText = classes[i].className;
     row.appendChild(classElement);
 
-    const predElement = document.createElement('div');
-    classElement.className = 'cell';
-    classElement.innerText = classes[i].pred;
-    row.appendChild(classElement);
+    // const predElement = document.createElement('div');
+    // classElement.className = 'cell';
+    // classElement.innerText = classes[i].pred;
+    // row.appendChild(classElement);
 
     const probsElement = document.createElement('div');
     probsElement.className = 'cell';
