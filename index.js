@@ -20,18 +20,23 @@
 
 // import {IMAGENET_CLASSES} from './imagenet_classes';
 const IMAGENET_CLASSES = {
-  0: 'tench, Tinca tinca',
-  1: 'goldfish, Carassius auratus',
-  2: 'great white shark, white shark, man-eater, man-eating shark, ' +
-      'Carcharodon carcharias',
-  3: 'tiger shark, Galeocerdo cuvieri',}
+  0: 'apple',
+  1: 'avocado',
+  2: 'banana',
+  3: 'carrot',
+  4: 'lettuce',
+  5: 'onion',
+  6: 'pepper',
+  7: 'potato',
+  8: 'tomato',
+ }
 
 const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
     'model_tfjs';
 
-const IMAGE_SIZE = 224;
-const TOPK_PREDICTIONS = 10;
+const IMAGE_SIZE = 128;
+const TOPK_PREDICTIONS = 3;
 
 let mobilenet;
 const mobilenetDemo = async () => {
