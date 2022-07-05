@@ -1,6 +1,8 @@
 # AI4ALL Project Classification + X
 
-[See this example live!](https://github.com/shadowninjazx/tfjs-classification-web)
+@AI4ALL CMU 2022
+
+[See this example live!](https://shadowninjazx.github.io/tfjs-classification-web/)
 
 This is a template website to host a TensorFlow JS (TFJS) version of image classification models online. 
 
