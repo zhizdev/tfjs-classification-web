@@ -14,7 +14,7 @@
  * limitations under the License.
  * =============================================================================
  */
-const IMAGENET_CLASSES = {
+const CLASSES_NAMES = {
   0: 'apple',
   1: 'avocado',
   2: 'banana',
@@ -128,7 +128,7 @@ async function getTopKClasses(logits, topK) {
   const topClassesAndProbs = [];
   for (let i = 0; i < topkIndices.length; i++) {
     topClassesAndProbs.push({
-      className: IMAGENET_CLASSES[topkIndices[i]],
+      className: CLASSES_NAMES[topkIndices[i]],
       pred: topkIndices[i],
       probability: topkValues[i]
     })
