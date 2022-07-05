@@ -15,9 +15,16 @@
  * =============================================================================
  */
 
-import * as tf from '@tensorflow/tfjs';
+// import * as tf from '@tensorflow/tfjs';
+// import * as tf from '@tensorflow/tfjs';
 
-import {IMAGENET_CLASSES} from './imagenet_classes';
+// import {IMAGENET_CLASSES} from './imagenet_classes';
+const IMAGENET_CLASSES = {
+  0: 'tench, Tinca tinca',
+  1: 'goldfish, Carassius auratus',
+  2: 'great white shark, white shark, man-eater, man-eating shark, ' +
+      'Carcharodon carcharias',
+  3: 'tiger shark, Galeocerdo cuvieri',}
 
 const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
@@ -31,7 +38,7 @@ const mobilenetDemo = async () => {
   status('Loading model...');
 
   // mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH, {fromTFHub: true});
-  mobilenet = await tf.loadLayersModel('./model_tfjs/model.json');
+  mobilenet = await tf.loadLayersModel('model_tfjs/model.json');
 
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
@@ -101,7 +108,7 @@ async function predict(imgElement) {
  * @param logits Tensor representing the logits from MobileNet.
  * @param topK The number of top predictions to show.
  */
-export async function getTopKClasses(logits, topK) {
+async function getTopKClasses(logits, topK) {
   const values = await logits.data();
 
   const valuesAndIndices = [];
