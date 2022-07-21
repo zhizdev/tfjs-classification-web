@@ -82,6 +82,7 @@ async function predict(imgElement) {
     const offset = tf.scalar(127.5);
     // Normalize the image from [0, 255] to [-1, 1].X
     // const normalized = img.sub(offset).div(offset);
+    const normalized = img;
 
     // Reshape to a single-element batch so we can pass it to predict.
     const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);
